@@ -35,7 +35,7 @@ function About() {
                 <div className="about-image-card">
 
                     <img
-                        src="/images/shane.JPG"
+                        src={`${import.meta.env.BASE_URL}images/shane.JPG`}
                         alt="Shane"
                         className="about-person-image"
                     />

@@ -3,26 +3,25 @@ import { Link } from 'react-router-dom';
 import ActivityList from '../components/ActivityList';
 
 const quizActivities = [
-
     {
         id: 1,
         title: 'QUIZ 01',
         date: 'August 27, 2026',
-        image: '/images/quizzes/quiz-01.jpg'
+        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-01.jpg`
     },
 
     {
         id: 2,
         title: 'QUIZ 02',
         date: 'SOON',
-        image: '/images/quiz/quiz-02.jpg'
+        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-02.jpg`
     },
 
     {
         id: 3,
         title: 'QUIZ 03',
         date: 'SOON',
-        image: '/images/quiz/quiz-03.jpg'
+        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-03.jpg`
     },
 ];
 

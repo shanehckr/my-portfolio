@@ -37,38 +37,6 @@
 }
 
 @font-face {
-    font-family: 'KeHan2Font';
-    src: url('/fonts/Ke hAnimal 2.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'KeHanFont';
-    src: url('/fonts/Ke hAnimal - Made By MidnightRemedy.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PoppinsFont';
-    src: url('/fonts/Poppins-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'SubFont';
-    src: url('/fonts/Sublime-Regular.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'InterFont';
     src: url('/fonts/Inter_24pt-Regular.woff2') format ('woff2');
     font-weight: bold;

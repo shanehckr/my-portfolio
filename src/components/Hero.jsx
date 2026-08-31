@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 function Hero() {
     return (
-        <section 
-            className="hero" 
+        <section
+            className="hero"
             id="home"
             style={{
                 backgroundColor: '#080203',
@@ -40,7 +40,7 @@ function Hero() {
 
             <div className="person-container">
                 <img
-                    src="/images/person.svg"
+                    src={`${import.meta.env.BASE_URL}images/person.svg`}
                     alt="Shane"
                     className="person-image"
                 />
