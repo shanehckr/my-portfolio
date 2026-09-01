@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Kalam:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
 @font-face {
 
     font-family: 'JJKFont';
@@ -402,7 +404,7 @@ body {
     text-decoration: none;
 
     font-family:
-        'InterFont', arial;
+       'Sometype Mono', monospace;
 
     font-size: 16px;
     font-weight: 500;
@@ -1004,7 +1006,7 @@ body {
     margin-bottom: 22px;
 
     
-    font-family: 'PoppinsFont', Arial, sans-serif;
+    font-family: 'Sometype Mono', monospace;
 
     
     font-size: 12px;
@@ -1106,22 +1108,6 @@ body {
     padding-left: 24px;
 
     border-left: 1px solid rgba(255, 26, 26, 0.5);
-}
-
-.about-intro-label {
-    display: block;
-
-    margin-bottom: 15px;
-
-    font-family: 'PoppinsFont', Arial, sans-serif;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 4px;
-
-    color: rgba(255, 255, 255, 0.45);
 }
 
 .about-text {
@@ -1970,6 +1956,351 @@ body {
         font-size: 18vw;
     }
 }
+
+.activity-image-button {
+    position: relative;
+}
+
+/* Subtle photo count */
+
+.activity-photo-count {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    min-width: 34px;
+    height: 28px;
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(8, 2, 3, 0.78);
+    color: #ffffff;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(4px);
+
+    z-index: 3;
+}
+
+.activity-view-indicator {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -45%);
+    
+    padding: 8px 13px;
+
+    color: #ffffff;
+    background: rgba(8, 2, 3, 0.72);
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    opacity: 0;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+.activity-image-button:hover .activity-view-indicator {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 9999;
+
+    animation: imageViewerFadeIn 0.25s ease forwards;
+}
+
+.image-viewer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(110, 8, 15, 0.12),
+            transparent 55%
+        );
+
+    pointer-events: none;
+}
+
+.image-viewer-close {
+    position: absolute;
+
+    top: 28px;
+    right: 34px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-family: Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 1;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.image-viewer-close:hover {
+    color: #ff1a1a;
+    transform: rotate(90deg);
+}
+
+.image-viewer-content {
+    position: relative;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+
+    animation: imageViewerImageIn 0.3s ease forwards;
+}
+
+.image-viewer-image {
+    display: block;
+
+    max-width: 88vw;
+    max-height: 78vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.75),
+        0 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.image-viewer-arrow {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-family: Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.image-viewer-arrow:hover {
+    color: #ff1a1a;
+}
+
+.image-viewer-prev {
+    left: 4vw;
+}
+
+.image-viewer-next {
+    right: 4vw;
+}
+
+.image-viewer-prev:hover {
+    transform: translate(-4px, -50%);
+}
+
+.image-viewer-next:hover {
+    transform: translate(4px, -50%);
+}
+
+.image-viewer-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.image-viewer-counter {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 14px;
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.image-viewer-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.image-viewer-dot {
+    width: 6px;
+    height: 6px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.image-viewer-dot:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.image-viewer-dot.active {
+    background: #ff1a1a;
+    transform: scale(1.35);
+}
+
+@keyframes imageViewerFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes imageViewerImageIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .image-viewer {
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .image-viewer-close {
+        top: 18px;
+        right: 18px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 30px;
+    }
+
+    .image-viewer-image {
+        max-width: 92vw;
+        max-height: 76vh;
+    }
+
+    .image-viewer-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+    }
+
+    .image-viewer-prev {
+        left: 5px;
+    }
+
+    .image-viewer-next {
+        right: 5px;
+    }
+
+    .image-viewer-pagination {
+        margin-top: 14px;
+    }
+}
+
 
 .hero-main-title {
     position: absolute;

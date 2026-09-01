@@ -35,7 +35,7 @@ function About() {
                 <div className="about-image-card">
 
                     <img
-                        src={`${import.meta.env.BASE_URL}images/shane.JPG`}
+                        src={`${import.meta.env.BASE_URL}images/shane.svg`}
                         alt="Shane"
                         className="about-person-image"
                     />
@@ -69,11 +69,7 @@ function About() {
                 <div className="about-intro">
 
                     <div className="about-intro-content">
-
-                        <span className="about-intro-label">
-                            WHO I AM
-                        </span>
-
+                        
                         <p className="about-text">
                             I'm a Computer Science student and aspiring developer
                             who loves exploring random things, especially those that

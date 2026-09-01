@@ -7,22 +7,29 @@ const quizActivities = [
         id: 1,
         title: 'QUIZ 01',
         date: 'August 27, 2026',
-        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-01.jpg`
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/quiz-01.jpg`,
+            `${import.meta.env.BASE_URL}images/quizzes/quiz-01.1.jpg`
+        ]
     },
 
     {
         id: 2,
         title: 'QUIZ 02',
         date: 'SOON',
-        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-02.jpg`
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/quiz-02.jpg`
+        ]
     },
 
     {
         id: 3,
         title: 'QUIZ 03',
         date: 'SOON',
-        image: `${import.meta.env.BASE_URL}images/quizzes/quiz-03.jpg`
-    },
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/quiz-03.jpg`
+        ]
+    }
 ];
 
 

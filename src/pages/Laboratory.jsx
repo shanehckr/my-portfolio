@@ -7,13 +7,17 @@ const laboratoryActivities = [
         id: 1,
         title: 'LABORATORY 01',
         date: 'SOON',
-        image: `${import.meta.env.BASE_URL}images/laboratory/laboratory-01.jpg`
+        image: [
+            `${import.meta.env.BASE_URL}images/laboratory/laboratory-01.jpg`
+        ]
     },
     {
         id: 2,
         title: 'LABORATORY 02',
         date: 'SOON',
-        image: `${import.meta.env.BASE_URL}images/laboratory/laboratory-02.jpg`
+        image: [
+            `${import.meta.env.BASE_URL}images/laboratory/laboratory-02.jpg`
+        ]
     }
 ];
 

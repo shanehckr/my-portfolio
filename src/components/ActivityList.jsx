@@ -3,14 +3,14 @@ import ActivityCard from './ActivityCard';
 import ImageViewer from './ImageViewer';
 
 function ActivityList({ activities }) {
-    const [selectedImage, setSelectedImage] = useState(null);
+    const [selectedImages, setSelectedImages] = useState(null);
 
-    function handleImageClick(image) {
-        setSelectedImage(image);
+    function handleImageClick(images) {
+        setSelectedImages(images);
     }
 
     function handleCloseViewer() {
-        setSelectedImage(null);
+        setSelectedImages(null);
     }
 
     if (!activities || activities.length === 0) {
@@ -20,9 +20,7 @@ function ActivityList({ activities }) {
     return (
         <section className="activity-archive-container">
 
-
             <div className="activity-grid">
-
                 {activities.map((activity) => (
                     <ActivityCard
                         key={activity.id}
@@ -31,11 +29,10 @@ function ActivityList({ activities }) {
                         isFeatured={false}
                     />
                 ))}
-
             </div>
 
             <ImageViewer
-                image={selectedImage}
+                images={selectedImages}
                 onClose={handleCloseViewer}
             />
 

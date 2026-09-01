@@ -1,21 +1,38 @@
 function ActivityCard({ activity, onImageClick, isFeatured = false }) {
-    const imageSource = activity.imageUrl || activity.image;
+    const images = activity.images?.length
+        ? activity.images
+        : [activity.imageUrl || activity.image];
+
+    const coverImage = images[0];
+    const additionalPhotos = images.length - 1;
 
     return (
-        <article className={`jjk-polaroid-card ${isFeatured ? 'featured' : ''}`}>
+        <article
+            className={`jjk-polaroid-card ${isFeatured ? 'featured' : ''}`}
+        >
             <div className="jjk-card-tape"></div>
 
             <button
                 type="button"
                 className="activity-image-button"
-                onClick={() => onImageClick(imageSource)}
-                aria-label={`View ${activity.title}`}
+                onClick={() => onImageClick(images)}
+                aria-label={`View photos for ${activity.title}`}
             >
                 <img
-                    src={imageSource}
+                    src={coverImage}
                     alt={activity.title}
                     className="activity-image"
                 />
+
+                {additionalPhotos > 0 && (
+                    <span className="activity-photo-count">
+                        +{additionalPhotos}
+                    </span>
+                )}
+
+                <span className="activity-view-indicator">
+                    VIEW
+                </span>
             </button>
 
             <div className="activity-info">
@@ -23,9 +40,11 @@ function ActivityCard({ activity, onImageClick, isFeatured = false }) {
                     <h2 className="activity-title">
                         {activity.title}
                     </h2>
+
                     <p className="activity-date">
                         {activity.date}
                     </p>
+
                     {activity.caption && (
                         <p className="activity-caption">
                             {activity.caption}

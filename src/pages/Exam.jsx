@@ -7,14 +7,19 @@ const quizActivities = [
         id: 1,
         title: 'MIDTERMS',
         date: 'SOON',
-        image: '/images/quiz/quiz-01.jpg'
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/midterms.jpg`,
+        ]
+        
     },
 
     {
         id: 2,
         title: 'FINALS',
         date: 'SOON',
-        image: '/images/quiz/quiz-02.jpg'
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/finals.jpg`
+        ]
     }
 
 ];
