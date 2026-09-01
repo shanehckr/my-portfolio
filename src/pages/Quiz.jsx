@@ -6,7 +6,7 @@ const quizActivities = [
     {
         id: 1,
         title: 'QUIZ 01',
-        date: 'August 27, 2026',
+        date: 'August 25, 2026',
         images: [
             `${import.meta.env.BASE_URL}images/quizzes/quiz-01.jpg`,
             `${import.meta.env.BASE_URL}images/quizzes/quiz-01.1.jpg`

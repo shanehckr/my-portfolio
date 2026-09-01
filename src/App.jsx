@@ -4,42 +4,54 @@ import About from './components/About';
 import Quiz from './pages/Quiz';
 import Laboratory from './pages/Laboratory';
 import Exam from './pages/Exam';
+import Cursor from './components/CursedCursor';
 
 function App() {
     return (
-        <Routes>
+        <>
+            <Cursor />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Hero />
+                        </>
+                    }
+                />
 
-            <Route
-                path="/"
-                element={
-                    <>
-                        <Hero />
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Hero />
 
-                    </>
-                }
-            />
+                        </>
+                    }
+                />
 
-           <Route
-                path="/about"
-                element={<About />}
-            > </Route>
-            
-            <Route
-                path="/quiz"
-                element={<Quiz />}
-            />
+                <Route
+                    path="/about"
+                    element={<About />}
+                > </Route>
 
-            <Route
-                path="/laboratory"
-                element={<Laboratory />}
-            />
+                <Route
+                    path="/quiz"
+                    element={<Quiz />}
+                />
 
-            <Route
-                path="/exam"
-                element={<Exam />}
-            />
+                <Route
+                    path="/laboratory"
+                    element={<Laboratory />}
+                />
 
-        </Routes>
+                <Route
+                    path="/exam"
+                    element={<Exam />}
+                />
+
+            </Routes>
+        </>
     );
 }
 

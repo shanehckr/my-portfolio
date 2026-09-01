@@ -2470,3 +2470,39 @@ body {
         text-align: right;
     }
 }
+
+.cursed-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+html,
+body,
+button,
+a,
+input,
+textarea,
+select {
+    cursor: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .cursed-cursor {
+        display: none;
+    }
+
+    html,
+    body,
+    button,
+    a,
+    input,
+    textarea,
+    select {
+        cursor: auto;
+    }
+}
