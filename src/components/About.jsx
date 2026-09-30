@@ -23,7 +23,7 @@ function About() {
                     <Link to="/" className="hero-nav-link">Home</Link>
                     <Link to="/about" className="hero-nav-link">About</Link>
                     <Link to="/quiz" className="hero-nav-link">Quiz</Link>
-                    <Link to="/laboratory" className="hero-nav-link">Laboratory</Link>
+                    <Link to="/activity" className="hero-nav-link">Activity</Link>
                     <Link to="/exam" className="hero-nav-link">Exam</Link>
                 </div>
             </nav>
@@ -57,13 +57,13 @@ function About() {
 
 
                 <h1 className="about-title">
-
-                    <span>SHANE </span>
-
-                    <span className="about-title-red">
-                        DELA PAZ
+                    <span>
+                        SHANE <span className="word-space">KEARL</span>
                     </span>
 
+                    <span className="about-title-red">
+                        DELA <span className="word-space">PAZ</span>
+                    </span>
                 </h1>
 
                 <div className="about-intro">
@@ -92,7 +92,7 @@ function About() {
 
 
                     <a
-                        href="https://github.com/"
+                        href="https://github.com/shanehckr"
                         target="_blank"
                         rel="noreferrer"
                         className="about-social-link"

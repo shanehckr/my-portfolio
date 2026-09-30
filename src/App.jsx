@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Hero from './components/Hero';
 import About from './components/About';
 import Quiz from './pages/Quiz';
-import Laboratory from './pages/Laboratory';
+import Activity from './pages/Activity';
 import Exam from './pages/Exam';
 import Cursor from './components/CursedCursor';
 
@@ -41,8 +41,8 @@ function App() {
                 />
 
                 <Route
-                    path="/laboratory"
-                    element={<Laboratory />}
+                    path="/activity"
+                    element={<Activity />}
                 />
 
                 <Route

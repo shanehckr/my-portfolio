@@ -1,40 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Kalam:wght@400;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
 
 @font-face {
 
     font-family: 'JJKFont';
-
-    
     src: url('/fonts/Jujutsu Kaisen.woff2') format('woff2');
-
-    
     font-weight: normal;
-
-    
     font-style: normal;
-
-    
     font-display: swap;
 }
 
 @font-face {
-
     font-family: 'ShogunFont';
-
-    
     src: url('/fonts/Shoguns Clan.woff2') format('woff2');
-
-    
     font-weight: normal;
-
-    
     font-style: normal;
-
-    
     font-display: swap;
 }
 
@@ -47,7 +28,6 @@
 }
 
 * {
-
     box-sizing: border-box;
 }
 
@@ -56,27 +36,20 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
-
-    
+    min-height: 100%; 
     background-color: #080203;
 }
 
 body {
     background-color: #080203;
-
-    
     overflow-x: hidden;
 }
 
 .hero {
     position: relative;
-
     min-height: 100vh;
     width: 100%;
-
     margin-bottom: -2px;
-
     background: #080203;
     border: none;
     outline: none;
@@ -90,105 +63,76 @@ body {
     inset: 0;
     background-color: #080203;
     background-image:
-
         linear-gradient(to bottom,
             transparent 0%,
             transparent 70%,
             #080203 98%,
             #080203 100%),
-
-        
         radial-gradient(ellipse at 50% 25%,
             rgba(110, 8, 15, 0.30) 0%,
             rgba(75, 6, 11, 0.16) 30%,
-            transparent 65%),
-
-        
+            transparent 65%),  
         radial-gradient(ellipse at 5% 55%,
             rgba(90, 7, 13, 0.20) 0%,
             transparent 55%),
         radial-gradient(ellipse at 95% 55%,
             rgba(90, 7, 13, 0.20) 0%,
-            transparent 55%),
-
-        
+            transparent 55%),        
         radial-gradient(ellipse at center,
             transparent 25%,
             rgba(0, 0, 0, 0.25) 65%,
             rgba(0, 0, 0, 0.75) 100%);
-
     background-repeat: no-repeat;
-
-    
     background-size: cover;
     z-index: 0;
 }
 
 .background::before {
     content: "";
-
     position: absolute;
-
     inset: 0;
-
     background:
-
         radial-gradient(ellipse at 12% 12%,
             rgba(150, 15, 20, 0.65) 0%,
             rgba(110, 10, 15, 0.35) 4%,
             transparent 13%),
-
         radial-gradient(ellipse at 87% 15%,
             rgba(145, 13, 19, 0.58) 0%,
             rgba(95, 8, 13, 0.28) 5%,
             transparent 15%),
-
         radial-gradient(ellipse at 20% 43%,
             rgba(145, 13, 18, 0.42) 0%,
             transparent 14%),
-
         radial-gradient(ellipse at 78% 40%,
             rgba(155, 14, 20, 0.40) 0%,
             transparent 15%),
-
         radial-gradient(circle at 15% 25%,
             rgba(225, 25, 30, 0.8) 0 2px,
             transparent 3px),
-
         radial-gradient(circle at 27% 18%,
             rgba(190, 20, 25, 0.7) 0 1px,
             transparent 3px),
-
         radial-gradient(circle at 73% 23%,
             rgba(225, 25, 30, 0.75) 0 2px,
             transparent 4px),
-
         radial-gradient(circle at 88% 31%,
             rgba(190, 20, 25, 0.65) 0 1px,
             transparent 4px),
-
         radial-gradient(circle at 20% 76%,
             rgba(160, 15, 20, 0.55) 0 2px,
             transparent 4px),
-
         radial-gradient(circle at 82% 72%,
             rgba(180, 15, 20, 0.55) 0 2px,
             transparent 4px);
-
     transform: scale(1.12);
-
     opacity: 0.75;
-
     z-index: 1;
-
     pointer-events: none;
 }
 
 .background-overlay {
     position: absolute;
     inset: 0;
-
-    
     background: linear-gradient(to bottom,
             rgba(0, 0, 0, 0.35) 0%,
             rgba(0, 0, 0, 0.15) 60%,
@@ -199,54 +143,33 @@ body {
 
 .hero-main-title {
     position: absolute;
-
     left: 50%;
     top: 18%;
-
     transform: translateX(-50%);
-
     width: 100%;
-
     margin: 0;
     padding: 0;
-
     text-align: center;
-
-    
     z-index: 2;
-
     pointer-events: none;
 }
 
 .person-image {
-
     width: 100%;
-
-    
     height: 100%;
-
-    
     object-fit: contain;
-
-    
     object-position: center bottom;
-
-    
     display: block;
-
     -webkit-mask-image: linear-gradient(to bottom,
             #000 0%,
             #000 calc(100% - 220px),
             rgba(0, 0, 0, 0.6) calc(100% - 140px),
             transparent calc(100% - 80px));
-
     mask-image: linear-gradient(to bottom,
             #000 0%,
             #000 calc(100% - 220px),
             rgba(0, 0, 0, 0.6) calc(100% - 140px),
             transparent calc(100% - 80px));
-
-    
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.6));
     transition: filter 0.35s ease, transform 0.35s ease;
 }
@@ -260,8 +183,6 @@ body {
     height: 135vh;
     z-index: 5;
     pointer-events: auto;
-
-    
     -webkit-mask-image:
         linear-gradient(to bottom,
             #000 0%,
@@ -273,7 +194,6 @@ body {
             #000 60%,
             transparent 100%);
     -webkit-mask-composite: source-in;
-
     mask-image:
         linear-gradient(to bottom,
             #000 0%,
@@ -285,7 +205,6 @@ body {
             #000 30%,
             transparent 100%);
     mask-composite: intersect;
-
     overflow: visible;
 }
 
@@ -305,9 +224,7 @@ body {
 }
 
 .person-container:hover .person-image {
-
     bottom: -30%;
-
     filter:
         drop-shadow(0 0 25px rgba(180, 20, 25, 0.8)) drop-shadow(0 0 50px rgba(110, 15, 18, 0.6)) drop-shadow(0 0 80px rgba(0, 0, 0, 0.8));
     transition: filter 0.35s ease;
@@ -315,75 +232,49 @@ body {
 
 .hero-role {
     display: block;
-
     margin-top: 130px;
-
     font-family:
         'ShogunFont',
         Arial,
         serif;
-
     font-size: clamp(100px,
             20vh,
             130px);
-
     font-style: italic;
-
     font-weight: normal;
-
     line-height: 0.78;
-
     letter-spacing: 4px;
-
     color: #ffffff;
-
     white-space: nowrap;
-
     transform:
         scaleX(1.05);
-
     transform-origin: center;
-
     opacity: 0.92;
-
     text-shadow:
         0 3px 15px rgba(0, 0, 0, 0.8);
 }
 
 .hero-nav {
     position: absolute;
-
     top: 34px;
-
     left: 5%;
     right: 5%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     z-index: 10;
-
     pointer-events: auto;
 }
 
 .hero-brand {
     text-decoration: none;
     font-weight: 500;
-
     font-family:
         'JJKFont', 'arial', sans-serif;
-
     font-size: 30px;
-
     letter-spacing: 0.5px;
-
     color: #ffffff;
-
     opacity: 0.95;
-
     transition:
         color 0.3s ease;
 }
@@ -394,25 +285,18 @@ body {
 
 .hero-nav-links {
     display: flex;
-
     align-items: center;
-
     gap: 38px;
 }
 
 .hero-nav-link {
     text-decoration: none;
-
     font-family:
        'Sometype Mono', monospace;
-
     font-size: 16px;
     font-weight: 500;
-
     letter-spacing: 1px;
-
     color: rgba(255, 255, 255, 0.9);
-
     transition:
         color 0.3s ease;
 }
@@ -426,13 +310,10 @@ body {
 }
 
 @media (max-width: 768px) {
-
     .hero-nav {
         top: 25px;
-
         left: 4%;
         right: 4%;
-
         gap: 18px;
     }
 
@@ -1769,86 +1650,47 @@ body {
 .activity-title {
 
     margin: 0;
-
-    
     font-family:
         'Bebas Neue',
         sans-serif;
-
-    
     font-size: 27px;
-
-    
     font-weight: 700;
-
-    
     color: #111111;
-
-    
     letter-spacing: 2px;
-
-    
     text-transform: uppercase;
-
-    
     transition:
         color 0.3s ease;
 }
 
 .activity-title::after {
-
     content: "";
-
-    
     display: block;
-
-    
     width: 120px;
-
-    
     height: 4px;
-
-    
     background: #8f1518;
-
-    
     transform:
-        rotate(-2deg) skewX(-15deg);
-
-    
+        rotate(-2deg) skewX(-15deg); 
     margin-top: 5px;
-
-    
     opacity: 0.85;
 }
 
-.jjk-polaroid-card:hover .activity-title {
+.word-space {
+    margin-right: 40px;
+}
 
+.jjk-polaroid-card:hover .activity-title {
     color: #8f1518;
 }
 
 .activity-date {
-
     margin: 0;
-
-    
     font-family:
         'Poppins',
         sans-serif;
-
-    
     font-size: 11px;
-
-    
     font-weight: 600;
-
-    
     color: #3b3637;
-
-    
     letter-spacing: 1px;
-
-    
     text-transform: uppercase;
 }
 
@@ -2024,21 +1866,15 @@ body {
 .image-viewer {
     position: fixed;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: rgba(0, 0, 0, 0.72);
-
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-
     z-index: 9999;
-
     animation: imageViewerFadeIn 0.25s ease forwards;
 }
 

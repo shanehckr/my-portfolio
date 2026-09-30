@@ -40,7 +40,7 @@ function Quiz() {
                     <Link to="/" className="hero-nav-link">Home</Link>
                     <Link to="/about" className="hero-nav-link">About</Link>
                     <Link to="/quiz" className="hero-nav-link">Quiz</Link>
-                    <Link to="/laboratory" className="hero-nav-link">Laboratory</Link>
+                    <Link to="/activity" className="hero-nav-link">Activity</Link>
                     <Link to="/exam" className="hero-nav-link">Exam</Link>
                 </div>
             </nav>
