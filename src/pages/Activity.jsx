@@ -14,7 +14,7 @@ const activityActivities = [
     {
         id: 2,
         title: 'MODULE 2',
-        date: 'Sept 19, 2026',
+        date: 'Sept 12, 2026',
         type: 'pdf',
         preview: `${import.meta.env.BASE_URL}images/previews/Dela Paz_Module 2_Activity_Preview.jpg`,
         file: `${import.meta.env.BASE_URL}files/module-activity/Dela Paz_Module 2_Activity.pdf`

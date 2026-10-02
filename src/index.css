@@ -348,11 +348,11 @@ body {
     
 
     .person-container {
-        width: 110vw;
+        width: 94vw;
 
-        height: 75vh;
+        height: 76vh;
 
-        bottom: -5%;
+        bottom: -8%;
     }
 
     
@@ -437,11 +437,11 @@ body {
     
 
     .person-container {
-        width: 120vw;
+        width: 94vw;
 
-        height: 70vh;
+        height: 76vh;
 
-        bottom: -2%;
+        bottom: -8%;
     }
 
     
@@ -3188,5 +3188,119 @@ select {
     textarea,
     select {
         cursor: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        min-height: 100svh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-nav {
+        top: 18px;
+        left: 16px;
+        right: 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 8px;
+    }
+
+    .hero-brand {
+        flex-shrink: 0;
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+
+    .hero-nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+
+        min-width: 0;
+    }
+
+    .hero-nav-link {
+        font-size: 8px;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+
+    .hero-greeting {
+        white-space: nowrap;
+        transform: none;
+        font-size: 18vw;
+        line-height: 0.85;
+        letter-spacing: 0;
+        top: 24%;
+    }
+
+    .hero-greeting-left {
+        left: 5%;
+        top: 34%;
+
+        font-size: 20vw;
+        letter-spacing: 0;
+        transform: none;
+    }
+
+    .hero-greeting-right {
+        left: auto;
+        right: 5%;
+        top: 34%;
+
+        font-size: 20vw;
+        letter-spacing: 0;
+        transform: none;
+    }
+
+    .person-container {
+        left: 50%;
+        bottom: -8%;
+
+        width: 94vw;
+        height: 76vh;
+
+        transform: translateX(-50%);
+    }
+
+    .person-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    .hero-main-title {
+        display: none;
+    }
+
+    .hero-left-content,
+    .hero-right-content {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-title {
+        white-space: normal;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        font-size: 42px;
+        line-height: 0.9;
+    }
+
+    .about-title-red {
+        display: block;
+        line-height: 1.2;
     }
 }
