@@ -938,7 +938,7 @@ body {
 
     font-family: 'JJKFont', sans-serif;
 
-    font-size: clamp(52px, 6vw, 88px);
+    font-size: clamp(50px, 5vw, 84px);
 
     line-height: 0.9;
 
@@ -1395,14 +1395,8 @@ body {
 .jjk-polaroid-card {
 
     position: relative;
-
-    
-    width: 310px;
-
-    
+    width: 310px; 
     max-width: 310px;
-
-    
     background:
         radial-gradient(circle at 20% 15%,
             rgba(0, 0, 0, 0.06) 0 1px,
@@ -1411,83 +1405,48 @@ body {
             rgba(0, 0, 0, 0.05) 0 1px,
             transparent 2px),
         #e5e0d8;
-
-    
     padding: 72px 16px 20px;
-
-    
-    border: none;
-
-    
+    border: none;    
     box-shadow:
         0 18px 35px rgba(0, 0, 0, 0.70),
         0 5px 12px rgba(0, 0, 0, 0.40);
-
-    
     border-radius: 15px;
-
-    
     transform: rotate(-0.7deg);
-
-    
     transition:
         transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
         box-shadow 0.4s ease;
-
-    
     z-index: 2;
-
-    
     overflow: visible;
 }
 
 .jjk-polaroid-card:nth-child(2) {
-
     transform: rotate(0.7deg);
 }
 
 .jjk-polaroid-card:nth-child(3) {
-
     transform: rotate(-0.4deg);
 }
 
 .jjk-polaroid-card:nth-child(4) {
-
     transform: rotate(0.6deg);
 }
 
 .jjk-polaroid-card:hover {
-
     transform:
         translateY(-10px) rotate(0deg) scale(1.025);
-
-    
     box-shadow:
         0 25px 45px rgba(0, 0, 0, 0.85),
         0 0 18px rgba(143, 21, 24, 0.55),
         0 0 45px rgba(143, 21, 24, 0.30);
-
-    
     z-index: 20;
 }
 
 .jjk-card-tape {
-
     position: absolute;
-
-    
     top: 15px;
-
-    
     left: 18px;
-
-    
     width: 52px;
-
-    
     height: 22px;
-
-    
     background:
         linear-gradient(90deg,
             transparent 0 8%,
@@ -1497,37 +1456,18 @@ body {
             transparent 38% 48%,
             #8f1518 48% 58%,
             transparent 58% 100%);
-
-    
     opacity: 0.9;
-
-    
     transform: rotate(-4deg);
-
-    
     z-index: 5;
-
-    
     pointer-events: none;
 }
 
 .jjk-card-tape::after {
-
     content: "呪";
-
-    
     position: absolute;
-
-    
     left: 62px;
-
-    
     top: -8px;
-
-    
     font-family: 'JJKFont', serif;
-
-    
     font-size: 25px;
 
     
@@ -1694,71 +1634,87 @@ body {
     text-transform: uppercase;
 }
 
-.jjk-card-stamp {
+.activity-view-button {
 
     width: 42px;
 
-    
     height: 42px;
 
-    
-    border: 2px solid #8f1518;
+    padding: 0;
 
-    
-    background: rgba(143, 21, 24, 0.04);
-
-    
-    color: #8f1518;
-
-    
     display: flex;
 
-    
     align-items: center;
 
-    
     justify-content: center;
 
-    
-    border-radius: 50%;
-
-    
-    transform: rotate(-10deg);
-
-    
     flex-shrink: 0;
 
-    
+    border: 2px solid #8f1518;
+
+    border-radius: 50%;
+
+    background:
+        rgba(143, 21, 24, 0.04);
+
+    color: #8f1518;
+
+    cursor: pointer;
+
+    transform: rotate(-8deg);
+
     box-shadow:
-        inset 0 0 0 2px rgba(143, 21, 24, 0.12),
+        inset 0 0 0 2px rgba(143, 21, 24, 0.10),
         0 2px 4px rgba(0, 0, 0, 0.15);
 
-    
     transition:
         transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.jjk-card-stamp span {
 
-    color: #8f1518;
+.activity-view-icon {
 
-    
-    font-size: 20px;
+    width: 23px;
 
-    
-    font-weight: 700;
+    height: 23px;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease;
 }
 
-.jjk-polaroid-card:hover .jjk-card-stamp {
+
+.activity-view-button:hover {
+
+    color: #ffffff;
+
+    background: #8f1518;
 
     transform:
-        rotate(0deg) scale(1.08);
+        rotate(0deg)
+        scale(1.08);
 
-    
     box-shadow:
-        inset 0 0 0 2px rgba(143, 21, 24, 0.16),
-        0 0 12px rgba(143, 21, 24, 0.35);
+        inset 0 0 0 2px rgba(255, 255, 255, 0.12),
+        0 0 14px rgba(143, 21, 24, 0.40);
+}
+
+
+.activity-view-button:hover .activity-view-icon {
+
+    transform: scale(1.08);
+}
+
+
+.activity-view-button:focus-visible {
+
+    outline: 2px solid #8f1518;
+
+    outline-offset: 4px;
 }
 
 .activity-caption {
@@ -1866,17 +1822,26 @@ body {
 .image-viewer {
     position: fixed;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.72);
+
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.88);
+
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
+
     z-index: 9999;
+
     animation: imageViewerFadeIn 0.25s ease forwards;
 }
+
 
 .image-viewer::before {
     content: "";
@@ -1887,67 +1852,328 @@ body {
     background:
         radial-gradient(
             circle at center,
-            rgba(110, 8, 15, 0.12),
-            transparent 55%
+            rgba(110, 8, 15, 0.14),
+            transparent 58%
         );
 
     pointer-events: none;
 }
 
-.image-viewer-close {
-    position: absolute;
+.image-viewer-panel {
+    position: relative;
 
-    top: 28px;
-    right: 34px;
+    width: 100%;
+    height: 100%;
 
-    width: 42px;
-    height: 42px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.image-viewer-toolbar {
+    flex-shrink: 0;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+
+    padding: 0 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+}
+
+
+.image-viewer-zoom-controls,
+.image-viewer-toolbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+}
+
+.image-viewer-control,
+.image-viewer-download,
+.image-viewer-close,
+.image-viewer-arrow {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 38px;
 
     padding: 0;
+
+    border: 1px solid rgba(143, 21, 24, 0.75);
+    border-radius: 0;
+
+    background: rgba(8, 2, 3, 0.96);
+
+    color: rgba(255, 255, 255, 0.82);
+
+    cursor: pointer;
+
+    position: relative;
+
+    clip-path: polygon(
+        0 0,
+        92% 0,
+        100% 16%,
+        100% 100%,
+        0 100%
+    );
+
+    box-shadow:
+        0 0 0 1px rgba(143, 21, 24, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.image-viewer-control {
+
+    width: 38px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+.image-viewer-download {
+
+    width: 42px;
+
+    font-family:
+        'Sometype Mono',
+        monospace;
+
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+.image-viewer-close {
+
+    width: 42px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 200;
+
+    line-height: 1;
+}
+
+.image-viewer-arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 44px;
+    height: 44px;
+
+    z-index: 5;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+
+    line-height: 1;
+}
+
+.image-viewer-control:hover,
+.image-viewer-download:hover,
+.image-viewer-close:hover,
+.image-viewer-arrow:hover {
+
+    color: #ffffff;
+
+    background: rgba(143, 21, 24, 0.20);
+
+    border-color: #8f1518;
+
+    box-shadow:
+        0 0 12px rgba(143, 21, 24, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+.image-viewer-close:hover {
+
+    transform: translateY(-1px) rotate(90deg);
+}
+
+.image-viewer-control:focus-visible,
+.image-viewer-download:focus-visible,
+.image-viewer-close:focus-visible,
+.image-viewer-arrow:focus-visible {
+
+    outline: 2px solid #8f1518;
+
+    outline-offset: 3px;
+}
+
+.image-viewer-control:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.image-viewer-control {
+    width: 38px;
+    height: 38px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: transparent;
-    border: none;
-
-    color: rgba(255, 255, 255, 0.9);
-
     font-family: Arial, sans-serif;
-    font-size: 34px;
-    font-weight: 200;
+    font-size: 22px;
+    font-weight: 300;
+
     line-height: 1;
-
-    cursor: pointer;
-
-    z-index: 10;
-
-    transition:
-        color 0.2s ease,
-        transform 0.2s ease;
 }
 
+
+.image-viewer-zoom-value {
+    min-width: 58px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+.image-viewer-control:hover,
+.image-viewer-zoom-value:hover,
+.image-viewer-download:hover,
 .image-viewer-close:hover {
     color: #ff1a1a;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+.image-viewer-control:disabled {
+    opacity: 0.25;
+
+    cursor: not-allowed;
+}
+
+
+.image-viewer-download {
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 12px;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+}
+
+
+.image-viewer-download span:first-child {
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.image-viewer-close {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 30px;
+    font-weight: 200;
+
+    line-height: 1;
+}
+
+
+.image-viewer-close:hover {
     transform: rotate(90deg);
 }
 
 .image-viewer-content {
     position: relative;
 
-    max-width: 90vw;
-    max-height: 90vh;
+    flex: 1;
+
+    min-height: 0;
 
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    z-index: 2;
+    overflow: hidden;
 
-    animation: imageViewerImageIn 0.3s ease forwards;
+    touch-action: none;
 }
+
+
+.image-viewer-stage {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    touch-action: none;
+}
+
 
 .image-viewer-image {
     display: block;
@@ -1965,13 +2191,36 @@ body {
     box-shadow:
         0 20px 70px rgba(0, 0, 0, 0.75),
         0 0 30px rgba(0, 0, 0, 0.35);
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    transform-origin: center center;
+
+    transition: transform 0.2s ease;
+
+    cursor: default;
+}
+
+
+.image-viewer-content.zoomed .image-viewer-image {
+    cursor: grab;
+}
+
+
+.image-viewer-content.zoomed .image-viewer-image.dragging {
+    cursor: grabbing;
+
+    transition: none;
 }
 
 .image-viewer-arrow {
     position: absolute;
 
     top: 50%;
-    transform: translateY(-50%);
+
+    z-index: 5;
 
     width: 54px;
     height: 54px;
@@ -1982,97 +2231,74 @@ body {
 
     padding: 0;
 
-    background: transparent;
     border: none;
+
+    background: transparent;
 
     color: rgba(255, 255, 255, 0.72);
 
     font-family: Arial, sans-serif;
+
     font-size: 28px;
     font-weight: 300;
 
     cursor: pointer;
 
-    z-index: 5;
+    transform: translateY(-50%);
 
     transition:
         color 0.2s ease,
         transform 0.2s ease;
 }
 
+
 .image-viewer-arrow:hover {
     color: #ff1a1a;
 }
 
+
 .image-viewer-prev {
-    left: 4vw;
+    left: 28vw;
 }
 
+
 .image-viewer-next {
-    right: 4vw;
+    right: 28vw;
 }
+
 
 .image-viewer-prev:hover {
     transform: translate(-4px, -50%);
 }
+
 
 .image-viewer-next:hover {
     transform: translate(4px, -50%);
 }
 
 .image-viewer-pagination {
+    flex-shrink: 0;
+
+    min-height: 42px;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-
-    gap: 10px;
-
-    margin-top: 18px;
+    justify-content: center;
 }
+
 
 .image-viewer-counter {
     font-family: 'Bebas Neue', sans-serif;
 
     font-size: 14px;
+
     letter-spacing: 3px;
 
     color: rgba(255, 255, 255, 0.78);
 }
 
-.image-viewer-dots {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.image-viewer-dot {
-    width: 6px;
-    height: 6px;
-
-    padding: 0;
-
-    border: none;
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.35);
-
-    cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-.image-viewer-dot:hover {
-    background: rgba(255, 255, 255, 0.75);
-}
-
-.image-viewer-dot.active {
-    background: #ff1a1a;
-    transform: scale(1.35);
-}
-
 @keyframes imageViewerFadeIn {
+
     from {
         opacity: 0;
     }
@@ -2080,42 +2306,61 @@ body {
     to {
         opacity: 1;
     }
+
 }
 
+
 @keyframes imageViewerImageIn {
+
     from {
         opacity: 0;
+
         transform: scale(0.96);
     }
 
     to {
         opacity: 1;
+
         transform: scale(1);
     }
+
 }
+
 
 @media (max-width: 650px) {
 
     .image-viewer {
-        padding: 20px;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        padding: 0;
     }
 
-    .image-viewer-close {
-        top: 18px;
-        right: 18px;
 
+    .image-viewer-toolbar {
+        min-height: 54px;
+
+        padding: 0 4px;
+    }
+
+
+    .image-viewer-download {
+        padding: 0 8px;
+
+        font-size: 10px;
+    }
+
+
+    .image-viewer-close {
         width: 38px;
         height: 38px;
 
-        font-size: 30px;
+        font-size: 28px;
     }
 
+
     .image-viewer-image {
-        max-width: 92vw;
+        max-width: 82vw;
         max-height: 76vh;
     }
+
 
     .image-viewer-arrow {
         width: 42px;
@@ -2124,19 +2369,622 @@ body {
         font-size: 22px;
     }
 
+
     .image-viewer-prev {
-        left: 5px;
+        left: 18px;
     }
+
 
     .image-viewer-next {
-        right: 5px;
+        right: 18px;
     }
 
+
     .image-viewer-pagination {
-        margin-top: 14px;
+        min-height: 38px;
+    }
+
+}
+
+.pdf-viewer {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    z-index: 9999;
+}
+
+.pdf-viewer-panel {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    z-index: 2;
+}
+
+.pdf-viewer-toolbar {
+    flex-shrink: 0;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 58px;
+
+    padding: 0 8px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+    color: #ffffff;
+}
+
+.pdf-viewer-search {
+    position: absolute;
+
+    top: 68px;
+    right: 30px;
+
+    z-index: 20;
+
+    width: 300px;
+
+    padding: 7px;
+
+    background: rgba(8, 2, 3, 0.96);
+
+    border: 1px solid rgba(143, 21, 24, 0.85);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(143, 21, 24, 0.16);
+
+    clip-path: polygon(
+        0 0,
+        96% 0,
+        100% 14%,
+        100% 100%,
+        0 100%
+    );
+
+    animation: pdfSearchOpen 0.18s ease forwards;
+}
+
+
+.pdf-viewer-search input {
+    display: block;
+
+    width: 100%;
+    height: 25px;
+
+    padding: 0 12px;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    border-left: 3px solid #8f1518;
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    color: #ffffff;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 12px;
+
+    letter-spacing: 0.4px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.pdf-viewer-search input::placeholder {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+
+.pdf-viewer-search input:focus {
+    border-color: rgba(143, 21, 24, 0.85);
+
+    border-left-color: #ff1a1a;
+
+    background: rgba(143, 21, 24, 0.08);
+
+    box-shadow:
+        0 0 12px rgba(143, 21, 24, 0.20);
+}
+
+
+@keyframes pdfSearchOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
+
+@media (max-width: 650px) {
+
+    .pdf-viewer-search {
+        top: 62px;
+        right: 10px;
+        left: 10px;
+
+        width: auto;
+    }
+
+}
+
+.pdf-viewer-zoom-controls,
+.pdf-viewer-toolbar-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.pdf-viewer-control,
+.pdf-viewer-zoom-value,
+.pdf-viewer-tool,
+.pdf-viewer-close {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid rgba(143, 21, 24, 0.75);
+    border-radius: 0;
+
+    background: rgba(8, 2, 3, 0.96);
+
+    color: rgba(255, 255, 255, 0.82);
+
+    cursor: pointer;
+
+    position: relative;
+
+    clip-path: polygon(
+        0 0,
+        92% 0,
+        100% 16%,
+        100% 100%,
+        0 100%
+    );
+
+    box-shadow:
+        0 0 0 1px rgba(143, 21, 24, 0.08),
+        0 4px 12px rgba(0, 0, 0, 0.30);
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.pdf-viewer-control {
+
+    width: 38px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 20px;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+.pdf-viewer-zoom-value {
+
+    min-width: 58px;
+
+    padding: 0 8px;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+.pdf-viewer-tool {
+
+    width: 42px;
+}
+
+.pdf-tool-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-family:
+        'Sometype Mono',
+        monospace;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease;
+}
+
+.pdf-viewer-close {
+
+    width: 42px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 27px;
+    font-weight: 200;
+
+    line-height: 1;
+}
+
+.pdf-viewer-control:hover,
+.pdf-viewer-zoom-value:hover,
+.pdf-viewer-tool:hover,
+.pdf-viewer-close:hover {
+
+    color: #ffffff;
+
+    background: rgba(143, 21, 24, 0.20);
+
+    border-color: #8f1518;
+
+    box-shadow:
+        0 0 12px rgba(143, 21, 24, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+.pdf-viewer-tool:hover .pdf-tool-icon {
+
+    transform: scale(1.08);
+}
+
+
+.pdf-viewer-close:hover {
+
+    transform: translateY(-1px) rotate(90deg);
+}
+
+.pdf-viewer-tool.active {
+
+    color: #ffffff;
+
+    background: rgba(143, 21, 24, 0.32);
+
+    border-color: #b51d21;
+
+    box-shadow:
+        0 0 14px rgba(143, 21, 24, 0.30);
+}
+
+.pdf-viewer-control:focus-visible,
+.pdf-viewer-zoom-value:focus-visible,
+.pdf-viewer-tool:focus-visible,
+.pdf-viewer-close:focus-visible {
+
+    outline: 2px solid #8f1518;
+
+    outline-offset: 3px;
+}
+
+.pdf-viewer-control:disabled {
+
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+.pdf-viewer-control {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 22px;
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.pdf-viewer-zoom-value {
+    min-width: 58px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+.pdf-viewer-control:hover,
+.pdf-viewer-zoom-value:hover,
+.pdf-viewer-download:hover,
+.pdf-viewer-close:hover {
+    color: #ff1a1a;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+.pdf-viewer-control:disabled {
+    opacity: 0.25;
+
+    cursor: not-allowed;
+}
+
+
+.pdf-viewer-download {
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 12px;
+
+    font-family: 'Sometype Mono', monospace;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+}
+
+
+.pdf-viewer-download span:first-child {
+    font-family: Arial, sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.pdf-viewer-close {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 30px;
+    font-weight: 200;
+
+    line-height: 1;
+}
+
+
+.pdf-viewer-close:hover {
+    transform: rotate(90deg);
+}
+
+.pdf-viewer-content {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 24px;
+
+    background: #171717;
+
+    overscroll-behavior: contain;
+}
+
+.pdf-viewer-pages {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 28px;
+
+    width: max-content;
+
+    min-width: 100%;
+
+    margin: 0 auto;
+
+}
+
+.pdf-viewer-pages.single-page {
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+.pdf-viewer-pages.two-page {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, max-content);
+
+    align-items: start;
+
+    justify-content: center;
+
+    column-gap: 24px;
+
+    row-gap: 28px;
+
+}
+
+.pdf-page-wrapper {
+
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.45);
+
+}
+
+.pdf-page-canvas {
+
+    display: block;
+
+    background: #ffffff;
+
+}
+
+.pdf-viewer-document {
+    flex-shrink: 0;
+
+    min-width: 70%;
+    height: 100%;
+
+    transition: width 0.2s ease;
+}
+
+
+.pdf-viewer-frame {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 100%;
+
+    border: none;
+
+    background: #ffffff;
+}
+
+@media (max-width: 650px) {
+
+    .pdf-viewer {
+        padding: 0;
+    }
+
+
+    .pdf-viewer-toolbar {
+        min-height: 54px;
+
+        padding: 0 4px;
+    }
+
+
+    .pdf-viewer-download {
+        padding: 0 8px;
+
+        font-size: 10px;
+    }
+
+
+    .pdf-viewer-close {
+        width: 38px;
+        height: 38px;
+
+        font-size: 28px;
+    }
+
+
+    .pdf-viewer-content {
+        padding: 12px;
+    }
+
+
+    .pdf-viewer-document {
+        min-width: 100%;
+    }
+
+        .pdf-viewer-pages.two-page {
+
+        grid-template-columns:
+            1fr;
+
+        width: max-content;
+
+    }
+
+}
 
 .hero-main-title {
     position: absolute;

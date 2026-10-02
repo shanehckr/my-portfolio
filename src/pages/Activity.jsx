@@ -6,18 +6,18 @@ const activityActivities = [
     {
         id: 1,
         title: 'MODULE 1',
-        date: 'SOON',
-        image: [
-            `${import.meta.env.BASE_URL}images/activity/activity-01.jpg`
-        ]
+        date: 'Sept 12, 2026',
+        type: 'pdf',
+        preview: `${import.meta.env.BASE_URL}images/previews/Dela Paz_Module 1_Activity 1_Preview.jpg`,
+        file: `${import.meta.env.BASE_URL}files/module-activity/Dela Paz_Module 1_Activity 1.pdf`
     },
     {
         id: 2,
         title: 'MODULE 2',
-        date: 'SOON',
-        image: [
-            `${import.meta.env.BASE_URL}images/activity/activity-02.jpg`
-        ]
+        date: 'Sept 19, 2026',
+        type: 'pdf',
+        preview: `${import.meta.env.BASE_URL}images/previews/Dela Paz_Module 2_Activity_Preview.jpg`,
+        file: `${import.meta.env.BASE_URL}files/module-activity/Dela Paz_Module 2_Activity.pdf`
     }
 ];
 

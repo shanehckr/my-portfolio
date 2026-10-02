@@ -1,40 +1,69 @@
 import { useState } from 'react';
 import ActivityCard from './ActivityCard';
 import ImageViewer from './ImageViewer';
+import PDFViewer from './PDFViewer';
 
 function ActivityList({ activities }) {
-    const [selectedImages, setSelectedImages] = useState(null);
+    const [selectedActivity, setSelectedActivity] =
+        useState(null);
 
-    function handleImageClick(images) {
-        setSelectedImages(images);
+    function handlePreview(activity) {
+        setSelectedActivity(activity);
     }
 
     function handleCloseViewer() {
-        setSelectedImages(null);
+        setSelectedActivity(null);
     }
 
     if (!activities || activities.length === 0) {
         return null;
     }
 
+    const selectedImages =
+        selectedActivity?.images?.length
+            ? selectedActivity.images
+            : selectedActivity?.imageUrl
+                ? [selectedActivity.imageUrl]
+                : selectedActivity?.image
+                    ? [selectedActivity.image]
+                    : [];
+
     return (
         <section className="activity-archive-container">
 
             <div className="activity-grid">
+
                 {activities.map((activity) => (
                     <ActivityCard
                         key={activity.id}
                         activity={activity}
-                        onImageClick={handleImageClick}
+                        onPreview={handlePreview}
                         isFeatured={false}
                     />
                 ))}
+
             </div>
 
-            <ImageViewer
-                images={selectedImages}
-                onClose={handleCloseViewer}
-            />
+
+            {/* IMAGE VIEWER */}
+
+            {selectedActivity?.type === 'image' && (
+                <ImageViewer
+                    images={selectedImages}
+                    onClose={handleCloseViewer}
+                />
+            )}
+
+
+            {/* PDF VIEWER */}
+
+            {selectedActivity?.type === 'pdf' && (
+                <PDFViewer
+                    file={selectedActivity.file}
+                    title={selectedActivity.title}
+                    onClose={handleCloseViewer}
+                />
+            )}
 
         </section>
     );
