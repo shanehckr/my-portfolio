@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const segmentCount = 1;
+      const locationPath = window.location;
+      const redirectPath =
+        locationPath.pathname
+          .split("/")
+          .slice(0, 1 + segmentCount)
+          .join("/") + "/";
+
+      const routePath = locationPath.pathname
+        .slice(redirectPath.length - 1);
+
+      sessionStorage.setItem(
+        "redirect",
+        routePath + locationPath.search + locationPath.hash
+      );
+
+      location.replace(redirectPath);
+    </script>
+  </head>
+  <body></body>
+</html>
