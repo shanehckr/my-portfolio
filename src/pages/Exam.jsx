@@ -6,17 +6,21 @@ const quizActivities = [
     {
         id: 1,
         title: 'MIDTERMS',
-        date: 'SOON',
+        date: 'October 6, 2026',
+        type: 'image',
+        score: "66/70",
         images: [
-            `${import.meta.env.BASE_URL}images/quizzes/midterms.jpg`,
+            `${import.meta.env.BASE_URL}images/exams/midterms-exam.jpg`,
         ]
-        
+
     },
 
     {
         id: 2,
         title: 'FINALS',
         date: 'SOON',
+        type: 'image',
+        score: "N/A",
         images: [
             `${import.meta.env.BASE_URL}images/quizzes/finals.jpg`
         ]
@@ -28,10 +32,10 @@ function Quiz() {
 
     return (
         <main
-          className="activity-page"
+            className="activity-page"
         >
 
-           <nav className="hero-nav">
+            <nav className="hero-nav">
                 <Link to="/" className="hero-brand">
                     Portfolio
                 </Link>

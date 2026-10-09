@@ -53,9 +53,12 @@ function ActivityCard({ activity, onPreview, isFeatured = false }) {
                         {activity.date}
                     </p>
 
-                    <p className="activity-type">
-                        {isPDF ? 'PDF' : 'IMAGE'}
-                    </p>
+                    {activity.score && (
+                        <div className="activity-score">
+                            <span className="score-label">SCORE:</span>
+                            <span className="score-value">{activity.score}</span>
+                        </div>
+                    )}
 
                 </div>
 

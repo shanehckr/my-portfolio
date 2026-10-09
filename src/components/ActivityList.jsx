@@ -45,8 +45,6 @@ function ActivityList({ activities }) {
             </div>
 
 
-            {/* IMAGE VIEWER */}
-
             {selectedActivity?.type === 'image' && (
                 <ImageViewer
                     images={selectedImages}
@@ -54,8 +52,6 @@ function ActivityList({ activities }) {
                 />
             )}
 
-
-            {/* PDF VIEWER */}
 
             {selectedActivity?.type === 'pdf' && (
                 <PDFViewer

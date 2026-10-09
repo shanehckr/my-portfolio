@@ -3304,3 +3304,15 @@ select {
         line-height: 1.2;
     }
 }
+
+.activity-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+@media (max-width: 480px) {
+    .activity-score {
+        gap: 2px;
+    }
+}

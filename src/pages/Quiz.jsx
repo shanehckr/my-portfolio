@@ -8,6 +8,7 @@ const quizActivities = [
         title: 'QUIZ 01',
         date: 'August 25, 2026',
         type: 'image',
+        score: "18/20",
         images: [
             `${import.meta.env.BASE_URL}images/quizzes/quiz-01.jpg`,
             `${import.meta.env.BASE_URL}images/quizzes/quiz-01.1.jpg`
@@ -17,20 +18,33 @@ const quizActivities = [
     {
         id: 2,
         title: 'QUIZ 02',
-        date: 'SOON',
+        date: 'October 4, 2026',
         type: 'image',
+        score: "20/20",
         images: [
-            `${import.meta.env.BASE_URL}images/quizzes/quiz-02.jpg`
+             `${import.meta.env.BASE_URL}images/quizzes/quiz-02.png`
         ]
     },
 
     {
         id: 3,
         title: 'QUIZ 03',
-        date: 'SOON',
+        date: 'October 4, 2026',
         type: 'image',
+        score: "20/20",
         images: [
-            `${import.meta.env.BASE_URL}images/quizzes/quiz-03.jpg`
+            `${import.meta.env.BASE_URL}images/quizzes/quiz-03.png`
+        ]
+    },
+
+    {
+        id: 4,
+        title: 'LONG QUIZ',
+        date: 'October 4, 2026',
+        type: 'image',
+        score: "44/45",
+        images: [
+            `${import.meta.env.BASE_URL}images/quizzes/long-quiz.png`
         ]
     }
 ];
